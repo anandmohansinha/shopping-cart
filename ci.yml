@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version:  ${{ vars.JAVA_VERSION }}
 
       - name: Make gradle Executable
         run: chmod +x gradlew
@@ -55,9 +55,9 @@ jobs:
 
       #------------------Build docker image ---------
       - name: Build docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/shopping-cart:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ vars.DOCKER_IMAGE_NAME }}:${{ vars.DOCKER_IMAGE_NAME }} .
 
       #---------------Push Docker images-----------
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/shopping-cart:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/${{ vars.DOCKER_IMAGE_NAME }}:${{ vars.DOCKER_IMAGE_NAME }}
 
