@@ -49,7 +49,6 @@ public class ShoppingCart {
                 .mapToDouble(CartItem::getTotalPrice)
                 .sum());
     }
-
     private double round(double value) {
         return BigDecimal.valueOf(value)
                 .setScale(2, RoundingMode.HALF_UP)
