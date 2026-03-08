@@ -55,7 +55,6 @@ public class ShoppingCart {
                 .setScale(2, RoundingMode.HALF_UP)
                 .doubleValue();
     }
-
     public Map<String, CartItem> getItems() {
         return Collections.unmodifiableMap(items);
     }
