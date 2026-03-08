@@ -31,7 +31,6 @@ public class ShoppingCart {
         if (productName == null || productName.isBlank()) {
             throw new IllegalArgumentException("Product name cannot be empty");
         }
-
         if (quantity <= 0) {
             throw new IllegalArgumentException("Quantity must be greater than 0");
         }
@@ -45,7 +44,6 @@ public class ShoppingCart {
             existingItem.addQuantity(quantity);
         }
     }
-
     public double getSubtotal() {
         return round(items.values().stream()
                 .mapToDouble(CartItem::getTotalPrice)
