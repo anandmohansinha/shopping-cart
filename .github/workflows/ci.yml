@@ -59,4 +59,3 @@ jobs:
       #---------------Push Docker images-----------
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/${{ vars.DOCKER_IMAGE_NAME }}:${{ vars.DOCKER_IMAGE_NAME }}
-
