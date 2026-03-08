@@ -29,8 +29,6 @@ jobs:
       #----- sonarCloud scan -------
       - name: Sonar Scan
         run: ./gradlew sonar
-        with:
-          projectBaseDir: .
         env:
           SONAR_TOKEN: ${{secrets.SONAR_TOKEN }}
 
